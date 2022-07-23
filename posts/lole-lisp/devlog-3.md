@@ -21,6 +21,9 @@ After about 3 months I discovered [GitPod](https://gitpod.io/) and
 Also during that time I got really obsessed with WASM (even more then before).
 So I decided to switch the compiler backend from LLVM to WASM.
 
+[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[Previous Post](./devlog-2)
+
 ## 🦇 WASM TIME!!!
 
 P.S. If title of this section seems familiar to you, it's because it is a
@@ -183,3 +186,5 @@ Too bad you can't like and subscribe, because the next part will be all about
 it, stay tuned.
 
 `TODO: insert patented "see you in the next one" phrase`
+
+[Next Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

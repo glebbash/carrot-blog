@@ -10,6 +10,9 @@ done. Now let's see how I did that.
 In the first DevLog I wrote about switching to Scala from TypeScript because of
 performance issues. Let's see how it went.
 
+[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[Previous Post](./devlog-0)
+
 ## 👍 The Good
 
 First of all, working with Scala is great. It has a nice language server, nice
@@ -96,3 +99,5 @@ Hopefully next DevLog will tell about self-hosting compiler for `lole-lisp` and
 maybe explain the name of the language 😏.
 
 `TODO: insert patented "see you in the next one" phrase`
+
+[Next Post](./devlog-3)

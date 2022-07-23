@@ -8,6 +8,9 @@ It may be strange to start the DevLog with a decision to switch to the new
 language but it is also my first programming related post so I guess it is
 better late than never.
 
+[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[Previous Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 ## TypeScript POC results
 
 After doing a
@@ -138,3 +141,5 @@ it is to switch back and forth though.
 I really wanted to go with Rust again (I even waited for Rust [dev container]()
 to build) but because Scala is new to me (and has less subjective downsides) I
 decided to go that route.
+
+[Next Post](./devlog-1)

@@ -8,6 +8,9 @@ In the previous DevLog I wrote about switching to Scala from TypeScript because
 of performance issues. This time I though it would be better to start with
 explaining what I am trying to do.
 
+[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[Previous Post](./devlog-0)
+
 ### 💡 The Idea
 
 The idea is very big. I want to create a programming language (or maybe not only
@@ -99,3 +102,5 @@ Initially I though about more for this DevLog but it was to big so I decided to
 I'll split it in two.
 
 Follow along if you want to know why you should stop writing tests. 🤔
+
+[Next Post](./devlog-2)
