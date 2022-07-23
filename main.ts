@@ -5,5 +5,9 @@ blog({
   avatar: "https://avatars.githubusercontent.com/u/17786588?s=400&v=4",
   avatarClass: "rounded-full",
   author: "glebbash",
-  theme: 'light'
+  theme: "light",
+  links: [
+    { title: "GitHub", url: "https://github.com/glebbash" },
+    { title: "LinkedIn", url: "https://www.linkedin.com/in/glebbash" },
+  ],
 });
