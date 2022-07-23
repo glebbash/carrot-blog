@@ -1,6 +1,7 @@
 ---
 title: 'lole-lisp[3]: WASM, JIT and a new sub project?!'
 publish_date: 2022-07-20
+tags: [lole-lisp]
 ---
 
 A long time ago...

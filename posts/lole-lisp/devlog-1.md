@@ -1,6 +1,7 @@
 ---
 title: 'lole-lisp[1]: The purpose'
 publish_date: 2022-01-29
+tags: [lole-lisp]
 ---
 
 In the previous DevLog I wrote about switching to Scala from TypeScript because

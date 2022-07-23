@@ -1,6 +1,7 @@
 ---
 title: 'lole-lisp[2]: Time to stop writing tests'
 publish_date: 2022-02-05
+tags: [lole-lisp]
 ---
 
 In the previous DevLog I guess I explained what I am trying to and what I had
