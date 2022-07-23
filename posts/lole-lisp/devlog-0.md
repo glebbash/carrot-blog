@@ -1,6 +1,6 @@
 ---
 title: 'lole-lisp[0]: New language for initial compiler'
-publish_date: 2022-01-23
+publish_date: 2022-01-03
 ---
 
 It may be strange to start the DevLog with a decision to switch to the new
