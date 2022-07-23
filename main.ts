@@ -8,6 +8,7 @@ blog({
   author: "glebbash",
   theme: "light",
   dateStyle: "full",
+  style: 'ul { list-style-type: "🥕 "; }',
   links: [
     { title: "GitHub", url: "https://github.com/glebbash" },
     { title: "LinkedIn", url: "https://www.linkedin.com/in/glebbash" },
