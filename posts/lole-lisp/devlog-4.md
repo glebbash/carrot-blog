@@ -72,7 +72,8 @@ results, which is great because now I can do it myself.
 
 ## 💡 deno-ffigen
 
-And this is where previous devlog ended. A new sub-project - deno-ffigen.
+And this is where previous devlog ended. A new sub-project -
+[deno-ffigen](https://github.com/glebbash/deno-ffigen).
 
 As I always overengineer and try to solve the problem for a general case and not
 for specific needs, it was actually pretty easy.
