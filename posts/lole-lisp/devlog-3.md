@@ -128,7 +128,7 @@ needed options, and started the build.
 After about 1.5 hours I had myself a `libLLVM-15git.so` file which was only
 54mb. Great! (I only compiled for X86 and WASM targets optimizing for size).
 
-So plugged that in to Deno.dlopen. And boom!!!
+So plugged that in to `Deno.dlopen`. And boom!!!
 
 Nothing. The same problem was still there.
 
@@ -187,4 +187,4 @@ it, stay tuned.
 
 `TODO: insert patented "see you in the next one" phrase`
 
-[Next Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Next Post](./devlog-4)
