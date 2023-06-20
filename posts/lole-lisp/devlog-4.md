@@ -173,7 +173,7 @@ Will see you in the next one 👋, fuck off.
 
 `TODO: insert patented "see you in the next one" phrase`
 
-[Next Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Next Post](./devlog-5)
 
 [Deno Deploy]: https://deno.com/deploy
 [This exact blog]: https://github.com/glebbash/carrot-blog
