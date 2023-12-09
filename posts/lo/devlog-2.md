@@ -1,7 +1,7 @@
 ---
-title: 'lole-lisp[2]: Time to stop writing tests'
+title: 'LO[2]: Time to stop writing tests'
 publish_date: 2022-02-05
-tags: [lole-lisp]
+tags: [lo]
 ---
 
 In the previous DevLog I guess I explained what I am trying to and what I had
@@ -10,7 +10,7 @@ done. Now let's see how I did that.
 In the first DevLog I wrote about switching to Scala from TypeScript because of
 performance issues. Let's see how it went.
 
-[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](./devlog-0)
 
 ## 👍 The Good
@@ -19,7 +19,7 @@ First of all, working with Scala is great. It has a nice language server, nice
 syntax (Scala 3) and a lot of features that I was missing in TypeScript.
 
 I implemented
-[the parser](https://github.com/glebbash/lole-lisp/blob/refactor-scala/src/main/scala/Parser.scala)
+[the parser](https://github.com/glebbash/LO/blob/refactor-scala/src/main/scala/Parser.scala)
 in 50 lines of code. Using the
 [cats-parse](https://github.com/typelevel/cats-parse) library.
 
@@ -95,8 +95,8 @@ only thing I need to do is add enough features to make it able to parse its own
 syntax. Add compiler from expressions to LLVM. And I'll have a working
 self-hosting compiler.
 
-Hopefully next DevLog will tell about self-hosting compiler for `lole-lisp` and
-maybe explain the name of the language 😏.
+Hopefully next DevLog will tell about self-hosting compiler for `LO` and
+maybe I'll explain the name of the language 😏.
 
 `TODO: insert patented "see you in the next one" phrase`
 

@@ -1,7 +1,7 @@
 ---
-title: 'lole-lisp[3]: WASM, JIT and a new sub project?!'
+title: 'LO[3]: WASM, JIT and a new sub project?!'
 publish_date: 2022-07-20
-tags: [lole-lisp]
+tags: [lo]
 ---
 
 A long time ago...
@@ -16,12 +16,12 @@ Ring came out...
 
 After about 3 months I discovered [GitPod](https://gitpod.io/) and
 [Github Codespaces](https://github.com/features/codespaces) and decided to give
-`lole-lisp` another shot.
+`LO` another shot.
 
 Also during that time I got really obsessed with WASM (even more then before).
 So I decided to switch the compiler backend from LLVM to WASM.
 
-[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](./devlog-2)
 
 ## 🦇 WASM TIME!!!

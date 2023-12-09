@@ -1,7 +1,7 @@
 ---
-title: 'lole-lisp[5]: Full rewrite, 3K lines file, no lib heaven'
+title: 'LO[5]: Full rewrite, 3K lines file, no lib heaven'
 publish_date: 2023-06-20
-tags: [lole-lisp, rust]
+tags: [lo, rust]
 ---
 
 Nowadays it's really hard not to use ChatGPT for writing ...
@@ -12,7 +12,7 @@ or Grammarly so expetc some typos and grammar bad.
 > P.S: The 3 month time since the last post is because of uni. Oh how I hate
 > uni. 🤮
 
-[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](./devlog-4)
 
 ## ⛵⛔ Sailing off course
@@ -336,7 +336,7 @@ The end.
 
 <!-- Links -->
 
-[The Idea]: https://carrot-blog.deno.dev/lole-lisp/devlog-1#%F0%9F%92%A1-the-idea
+[The Idea]: https://carrot-blog.deno.dev/lo/devlog-1#%F0%9F%92%A1-the-idea
 [language server]: https://en.wikipedia.org/wiki/Language_Server_Protocol
 [Advent of Code 2022]: https://adventofcode.com/2022
 [Rust to WebAssembly the hard way]: https://surma.dev/things/rust-to-webassembly/index.html

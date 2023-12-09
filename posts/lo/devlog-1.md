@@ -1,14 +1,14 @@
 ---
-title: 'lole-lisp[1]: The purpose'
+title: 'LO[1]: The purpose'
 publish_date: 2022-01-29
-tags: [lole-lisp]
+tags: [lo]
 ---
 
 In the previous DevLog I wrote about switching to Scala from TypeScript because
 of performance issues. This time I though it would be better to start with
 explaining what I am trying to do.
 
-[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](./devlog-0)
 
 ### 💡 The Idea
@@ -92,7 +92,7 @@ It is now possible to duplicate
 using LLVM (Even though it technically is written in C++).
 
 The source to can the `hello-world-compiler.lole` be can be found
-[here](https://github.com/glebbash/lole-lisp/blob/main/examples/hello-world-compiler.lole).
+[here](https://github.com/glebbash/LO/blob/main/examples/hello-world-compiler.lole).
 
 ## 🤷‍♂️ How did I do that?
 

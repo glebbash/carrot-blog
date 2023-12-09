@@ -1,13 +1,13 @@
 ---
-title: 'lole-lisp[4]: Deno, LLVM-C, ffigen'
+title: 'LO[4]: Deno, LLVM-C, ffigen'
 publish_date: 2022-08-08
-tags: [lole-lisp, deno, deno-ffigen]
+tags: [lo, deno, deno-ffigen]
 ---
 
 Last time I forgot to mention that I switched from Node to Deno. Well, it was
 great!
 
-[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](./devlog-3)
 
 ## 💪 Deno
@@ -55,7 +55,7 @@ simple cloud functions. Which is where this project fits exactly.
 
 So given that you need to pretty much write everything from scratch when using
 Deno (at least for now) and Node doesn't have good enough LLVM bindings, see
-[devlog#0](https://carrot-blog.deno.dev/lole-lisp/devlog-0#typescript-poc-results),
+[devlog#0](https://carrot-blog.deno.dev/lo/devlog-0#typescript-poc-results),
 the main thing I need to do use LLVM as a backend is to have actual bindings for
 it.
 
@@ -165,7 +165,7 @@ A. No. Yes. No.
 I wanted to make it into a separate DevLog about `deno-ffigen`, but right now I
 think it fits here nicely.
 
-Apart from this great invention there is currently no progress on lole-lisp as I
+Apart from this great invention there is currently no progress on LO as I
 was busy extracting deno-ffigen out of it and unhardcoding a lot of LLVM-C
 related stuff to make it work for sqlite3 and in general.
 

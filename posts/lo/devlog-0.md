@@ -1,20 +1,20 @@
 ---
-title: 'lole-lisp[0]: New language for initial compiler'
+title: 'LO[0]: New language for initial compiler'
 publish_date: 2022-01-03
-tags: [lole-lisp]
+tags: [lo]
 ---
 
 It may be strange to start the DevLog with a decision to switch to the new
 language but it is also my first programming related post so I guess it is
 better late than never.
 
-[GitHub Repo](https://github.com/glebbash/lole-lisp) |
+[GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## TypeScript POC results
 
 After doing a
-[POC containing hello-world emitted to LLVM IR](https://github.com/glebbash/lole-lisp/tree/1369f4323138f71d1eeede19d88f1308d53b6b1e)
+[POC containing hello-world emitted to LLVM IR](https://github.com/glebbash/LO/tree/1369f4323138f71d1eeede19d88f1308d53b6b1e)
 from a compiler written in TypeScript/Node.js I noticed that Node.js does not
 have a great support for C FFI.
 
