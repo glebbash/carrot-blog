@@ -75,12 +75,6 @@ async function main() {
     app.get(post.path, (_req, res) => res.send(post.html));
   }
 
-  const styles = await fs.readFile(
-    "node_modules/github-markdown-css/github-markdown.css",
-    "utf8"
-  );
-  app.get("/github-markdown.css", (_req, res) => res.send(styles));
-
   // raw `.md` files and images
   app.use("/", express.static("./posts"));
 
