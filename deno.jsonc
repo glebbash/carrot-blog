@@ -1,3 +1,8 @@
 {
-  "nodeModulesDir": true
+  "imports": {
+    "express": "npm:express",
+    "frontmatter": "npm:frontmatter",
+    "marked": "npm:marked",
+    "mime-types": "npm:mime-types"
+  }
 }

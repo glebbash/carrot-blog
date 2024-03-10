@@ -4,6 +4,7 @@ import fs from "node:fs/promises";
 import express from "express";
 import frontmatter from "frontmatter";
 import { marked } from "marked";
+import mime from "mime-types";
 
 await main();
 
@@ -76,7 +77,7 @@ async function main() {
   }
 
   // raw `.md` files and images
-  app.use("/", express.static("./posts"));
+  app.use("/", serveStaticFiles("./posts"));
 
   const port = 3000;
   app.listen(port, () => {
@@ -120,4 +121,19 @@ async function* listMarkdownFiles(dirPath) {
       yield filePath;
     }
   }
+}
+
+function serveStaticFiles(directory) {
+  return async (req, res, next) => {
+    const filePath = path.join(directory, req.url);
+    try {
+      const data = await fs.readFile(filePath);
+      const contentType = mime.lookup(filePath) || "application/octet-stream";
+      res.setHeader("Content-Type", contentType);
+      res.end(data);
+    } catch (err) {
+      // File not found or error reading the file
+      next();
+    }
+  };
 }
