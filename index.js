@@ -53,7 +53,7 @@ async function main() {
     const renderPostLink = (p) => `
       <article>
         <h3><a href="${p.path}">${p.data.title}</a></h3>
-        ${renderPostInfo(p)}
+        ${renderPostInfo(p.data)}
         <h2></h2>
       </article>
     `;
