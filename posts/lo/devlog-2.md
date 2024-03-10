@@ -1,17 +1,17 @@
 ---
-title: 'LO[2]: Time to stop writing tests'
+title: "LO[2]: Time to stop writing tests"
 publish_date: 2022-02-05
 tags: [lo]
 ---
+
+[GitHub Repo](https://github.com/glebbash/LO) |
+[Previous Post](./devlog-0)
 
 In the previous DevLog I guess I explained what I am trying to and what I had
 done. Now let's see how I did that.
 
 In the first DevLog I wrote about switching to Scala from TypeScript because of
 performance issues. Let's see how it went.
-
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-0)
 
 ## 👍 The Good
 

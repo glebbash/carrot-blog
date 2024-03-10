@@ -1,8 +1,11 @@
 ---
-title: 'LO[3]: WASM, JIT and a new sub project?!'
+title: "LO[3]: WASM, JIT and a new sub project?!"
 publish_date: 2022-07-20
 tags: [lo]
 ---
+
+[GitHub Repo](https://github.com/glebbash/LO) |
+[Previous Post](./devlog-2)
 
 A long time ago...
 
@@ -20,9 +23,6 @@ After about 3 months I discovered [GitPod](https://gitpod.io/) and
 
 Also during that time I got really obsessed with WASM (even more then before).
 So I decided to switch the compiler backend from LLVM to WASM.
-
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-2)
 
 ## 🦇 WASM TIME!!!
 
@@ -166,7 +166,7 @@ static inline LLVMBool LLVMInitializeNativeTarget(void) {
 This fucking this was driving me nuts. Apparently it was an inline function
 which contained only macros defined in another file.
 
-They were referring to LLVMInitializeX86Target*, functions (for X86 target). But
+They were referring to LLVMInitializeX86Target\*, functions (for X86 target). But
 I was already calling them in my code.
 
 `LLVMInitializeX86Target` and `LLVMInitializeX86TargetMC`, but I forgot

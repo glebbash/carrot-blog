@@ -1,3 +1,3 @@
 # 🥕 Carrot blog
 
-This is backend for https://carrot-blog.deno.dev/.
+This is the backend for https://carrot-blog.deno.dev/.

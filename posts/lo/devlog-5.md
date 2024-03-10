@@ -1,8 +1,11 @@
 ---
-title: 'LO[5]: Full rewrite, 3K lines file, no lib heaven'
+title: "LO[5]: Full rewrite, 3K lines file, no lib heaven"
 publish_date: 2023-06-20
 tags: [lo, rust]
 ---
+
+[GitHub Repo](https://github.com/glebbash/LO) |
+[Previous Post](./devlog-4)
 
 Nowadays it's really hard not to use ChatGPT for writing ...
 
@@ -11,9 +14,6 @@ or Grammarly so expetc some typos and grammar bad.
 
 > P.S: The 3 month time since the last post is because of uni. Oh how I hate
 > uni. 🤮
-
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-4)
 
 ## ⛵⛔ Sailing off course
 
@@ -319,7 +319,7 @@ compile to WASM:
 (fn main [] [] (
     {&iov : ptr}
     {&iov = 0}
-    
+
     (store IOVec &iov (struct.new IOVec 8 13))
 
     {_ : i32}

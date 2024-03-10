@@ -1,7 +1,7 @@
 ---
-title: 'shower-thoughts[0]: Information audience, WASM AI'
+title: "shower-thoughts[0]: Information audience, WASM AI"
 publish_date: 2023-03-10
-tags: [st, information audience, WASM, AI]
+tags: [st, wasm]
 ---
 
 > **“little things matter”**
@@ -27,6 +27,7 @@ But some books are written for children and some movies are preferred mostly by 
 So it makes sense that books and other sources of information should have a defined **audience** (can be represented as tags but nvm). Using audience will help people find what they really need.
 
 Examples are:
+
 - age
 - gender
 - ethnicity
@@ -41,7 +42,7 @@ Audience definition is a list of tags (with values) that should guide users towa
 
 Also this ties into how education should work.
 
-🔥🔥🔥 You shouldn’t restrict kids from playing with matches for example. 
+🔥🔥🔥 You shouldn’t restrict kids from playing with matches for example.
 
 You should allow them to do it but after a good explanation of the topic. You shouldn’t also just say if you want to burn the house down with the family inside - go on play with matches. Instead you should show what kind of conditions need to be met for playing with matches to be safe.
 
@@ -51,7 +52,7 @@ And to become a part of that audience you will need to have some education on th
 
 ## 🤯 Essence of Human Existence
 
-The concept of information audiences is very important for people. 
+The concept of information audiences is very important for people.
 
 As human is basically an information processor that happens to have interfaces for interaction with the world (can probably be reworded a bit nicely).
 
@@ -87,4 +88,4 @@ Next parts of shower thoughts would probably not contain conclusions, if I won't
 
 In other ones I’ll probably just insert something like "ending on the cringe note". As it happens on meetings with inexperienced leeds.
 
-Anyways, \*ended on the cringe note*
+Anyways, \*ended on the cringe note\*

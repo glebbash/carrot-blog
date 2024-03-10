@@ -1,15 +1,15 @@
 ---
-title: 'LO[0]: New language for initial compiler'
+title: "LO[0]: New language for initial compiler"
 publish_date: 2022-01-03
 tags: [lo]
 ---
 
+[GitHub Repo](https://github.com/glebbash/LO) |
+[Previous Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 It may be strange to start the DevLog with a decision to switch to the new
 language but it is also my first programming related post so I guess it is
 better late than never.
-
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## TypeScript POC results
 

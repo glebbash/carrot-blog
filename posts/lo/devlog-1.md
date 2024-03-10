@@ -1,15 +1,15 @@
 ---
-title: 'LO[1]: The purpose'
+title: "LO[1]: The purpose"
 publish_date: 2022-01-29
 tags: [lo]
 ---
 
+[GitHub Repo](https://github.com/glebbash/LO) |
+[Previous Post](./devlog-0)
+
 In the previous DevLog I wrote about switching to Scala from TypeScript because
 of performance issues. This time I though it would be better to start with
 explaining what I am trying to do.
-
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-0)
 
 ### 💡 The Idea
 
@@ -37,7 +37,7 @@ _TLDR_: if you already know what a self-hosting compiler is you can just skip to
 
 Self hosing compiler is a compiler that can compile it's own source code to
 produce itself.
-[A link to wiki](https://en.wikipedia.org/wiki/Self-hosting_(compilers)).
+[A link to wiki](<https://en.wikipedia.org/wiki/Self-hosting_(compilers)>).
 
 🤯🤯🤯 Woah. That is some time-travel loops level shit. How in the world is that
 possible?
@@ -54,7 +54,7 @@ The steps for creating a self hosted compiler are actually super simple:
 💥💥💥 Done. You have a self-hosting compiler for language `${X}`.
 
 This process is called bootstrapping. And a here is a
-[link](https://en.wikipedia.org/wiki/Bootstrapping_(compilers)) for better
+[link](<https://en.wikipedia.org/wiki/Bootstrapping_(compilers)>) for better
 explanation.
 
 #### What can you do with it?

@@ -1,14 +1,14 @@
 ---
-title: 'LO[4]: Deno, LLVM-C, ffigen'
+title: "LO[4]: Deno, LLVM-C, ffigen"
 publish_date: 2022-08-08
 tags: [lo, deno, deno-ffigen]
 ---
 
-Last time I forgot to mention that I switched from Node to Deno. Well, it was
-great!
-
 [GitHub Repo](https://github.com/glebbash/LO) |
 [Previous Post](./devlog-3)
+
+Last time I forgot to mention that I switched from Node to Deno. Well, it was
+great!
 
 ## 💪 Deno
 
