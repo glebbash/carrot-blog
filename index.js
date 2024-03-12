@@ -90,8 +90,8 @@ function renderPage({ title, content }) {
     <title>${title}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥕</text></svg>" type="image/x-icon">
-    <link rel="stylesheet" href="/github-markdown.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./github-markdown.css">
+    <link rel="stylesheet" href="./styles.css">
     <body class="markdown-body" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
       ${content}
     </body>
