@@ -77,7 +77,8 @@ async function main() {
   }
 
   // raw `.md` files and images
-  app.use("/", serveStaticFiles("./posts"));
+  // app.use("/", serveStaticFiles("./posts"));
+  app.use("/", express.static("./posts"));
 
   const port = 3000;
   app.listen(port, () => {
