@@ -119,7 +119,7 @@ And I was `oh 🤙 so 🤙 hyped 🤙` to implement the starter code assist in a
 
 Here is the demo:
 
-<video controls>
+<video width="100%" controls>
   <source src="./assets/code-assist.mp4" type="video/mp4">
 </video>
 <br/><br/> <!-- need some padding -->
