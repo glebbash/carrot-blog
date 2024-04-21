@@ -154,6 +154,16 @@ But now, having:
 
 I might finally be ready to start rewriting the compiler from `Rust` to `LO` to get to my ultimate goal of [self-hosting](<https://en.wikipedia.org/wiki/Self-hosting_(compilers)>).
 
+### 🛝 P.S: Playground
+
+Of fuck. I forgor a thing.
+
+I also made a small playground to test that the compiler will work in the browser (for future usage in vscode.dev).
+
+You can try it 👉 [here](https://glebbash.deno.dev/lo-playground/) 👈
+
+![playground](./assets/lo-playground.png)
+
 [Next Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 <!-- Links -->
