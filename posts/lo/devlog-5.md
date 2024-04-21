@@ -41,7 +41,7 @@ As I was using LLVM and binaryen I needed to have them as modules as well.
 Here is my attempt to design integration with Binaryen for self hosting
 compiler:
 
-![Self hosting mess](./self-hosting-mess.png)
+![Self hosting mess](./assets/self-hosting-mess.png)
 
 If you don't understand what's happening here - good. As I don't understand this
 either. Trying to use binaryen or LLVM and make compiler embeddable is not
@@ -332,7 +332,7 @@ understands it easily.
 
 The end.
 
-[Next Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Next Post](./devlog-6)
 
 <!-- Links -->
 

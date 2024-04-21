@@ -5,6 +5,7 @@ import express from "express";
 import frontmatter from "frontmatter";
 import { marked } from "marked";
 import mime from "mime-types";
+import process from "node:process";
 
 await main();
 
@@ -12,22 +13,10 @@ async function main() {
   const posts = [];
   for await (const postPath of listMarkdownFiles("./posts")) {
     const dir = path.dirname(postPath);
-    const source = await fs.readFile(postPath, "utf8");
-    const { data, content } = frontmatter(source);
-    const pageContent = marked.parse(content);
-    const title = data?.["title"];
-    const html = renderPage({
-      title,
-      content: `
-        <article>
-          <h1><a href="/">/</a> ${title}</h1>
-          ${renderPostInfo(data)}
-          ${pageContent}
-        </article>
-      `,
-    });
+    const { data, html } = await loadPost(postPath);
 
     posts.push({
+      fsPath: postPath,
       path: "/" + dir.slice("posts/".length) + "/" + path.parse(postPath).name,
       data,
       html,
@@ -72,8 +61,17 @@ async function main() {
     return res.send(html);
   });
 
-  for (const post of posts) {
-    app.get(post.path, (_req, res) => res.send(post.html));
+  if (process.env.DEV) {
+    for (const post of posts) {
+      app.get(post.path, async (_req, res) => {
+        const { html } = await loadPost(post.fsPath);
+        res.send(html);
+      });
+    }
+  } else {
+    for (const post of posts) {
+      app.get(post.path, (_req, res) => res.send(post.html));
+    }
   }
 
   // raw `.md` files and images
@@ -108,6 +106,25 @@ function renderPostInfo(data) {
     .join(" ");
 
   return `<p><code>${date} ${tags}</code></p>`;
+}
+
+async function loadPost(postPath) {
+  const source = await fs.readFile(postPath, "utf8");
+  const { data, content } = frontmatter(source);
+  const pageContent = marked.parse(content);
+  const title = data?.["title"];
+  const html = renderPage({
+    title,
+    content: `
+      <article>
+        <h1><a href="/">/</a> ${title}</h1>
+        ${renderPostInfo(data)}
+        ${pageContent}
+      </article>
+    `,
+  });
+
+  return { data, html };
 }
 
 async function* listMarkdownFiles(dirPath) {
