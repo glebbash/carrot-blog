@@ -39,7 +39,7 @@ async function main() {
   });
 
   // raw `.md` files and images
-  app.use("/", express.static("./posts"));
+  app.use("/", await serveStatic("./posts"));
 
   const port = 3000;
   app.listen(port, () => {
@@ -173,4 +173,21 @@ async function* listMarkdownFiles(dirPath) {
       yield filePath;
     }
   }
+}
+
+async function serveStatic(directory) {
+  const mime = await import("mime-types");
+
+  return async (req, res, next) => {
+    const filePath = path.join(directory, req.url);
+    try {
+      const data = await fs.readFile(filePath);
+      const contentType = mime.lookup(filePath) || "application/octet-stream";
+      res.setHeader("Content-Type", contentType);
+      res.end(data);
+    } catch (err) {
+      // File not found or error reading the file
+      next();
+    }
+  };
 }
