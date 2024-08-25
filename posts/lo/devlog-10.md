@@ -1,5 +1,5 @@
 ---
-title: "LO[10]: Rust Lies, Design is HARD, No Third Thing"
+title: "LO[10]: Design is HARD, Rust Lies, No Third Thing"
 publish_date: 2024-08-25
 tags: [lo]
 prev: ./devlog-9

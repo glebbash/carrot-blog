@@ -10,7 +10,6 @@ next: ./devlog-10
 
 Sorry, this one is only on YouTube. But don't worry, it's not even 2 minutes long.
 
-<iframe
-  class="yt-embed"
+<iframe class="yt-embed" allowfullscreen
   src="https://www.youtube.com/embed/n5dzO4vgHv0?autoplay=1&origin=https://carrot-blog.deno.dev"
 ></iframe>

@@ -10,6 +10,6 @@ next: ./devlog-9
 
 Sorry, this one is only on YouTube. And yep it's 1h 30min 💀
 
-<iframe class="yt-embed"
+<iframe class="yt-embed" allowfullscreen
   src="https://www.youtube.com/embed/plsupBjLCFA?autoplay=1&origin=https://carrot-blog.deno.dev"
 ></iframe>
