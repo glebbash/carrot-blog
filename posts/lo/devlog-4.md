@@ -1,11 +1,12 @@
 ---
 title: "LO[4]: Deno, LLVM-C, ffigen"
 publish_date: 2022-08-08
-tags: [lo, deno, deno-ffigen]
+tags: [lo, deno]
+prev: ./devlog-3
+next: ./devlog-5
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-3)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 Last time I forgot to mention that I switched from Node to Deno. Well, it was
 great!
@@ -172,8 +173,6 @@ related stuff to make it work for sqlite3 and in general.
 Will see you in the next one 👋, fuck off.
 
 `TODO: insert patented "see you in the next one" phrase`
-
-[Next Post](./devlog-5)
 
 [Deno Deploy]: https://deno.com/deploy
 [This exact blog]: https://github.com/glebbash/carrot-blog

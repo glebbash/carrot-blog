@@ -2,10 +2,10 @@
 title: "LO[0]: New language for initial compiler"
 publish_date: 2022-01-03
 tags: [lo]
+next: ./devlog-1
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 It may be strange to start the DevLog with a decision to switch to the new
 language but it is also my first programming related post so I guess it is
@@ -141,5 +141,3 @@ it is to switch back and forth though.
 I really wanted to go with Rust again (I even waited for Rust [dev container]()
 to build) but because Scala is new to me (and has less subjective downsides) I
 decided to go that route.
-
-[Next Post](./devlog-1)

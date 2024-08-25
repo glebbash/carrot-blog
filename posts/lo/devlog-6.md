@@ -1,11 +1,12 @@
 ---
-title: "LO[6]: New name, new syntax, code-assist without language server"
+title: "LO[6]: New name, new syntax, LSP but no LSP"
 publish_date: 2024-04-21
 tags: [lo]
+prev: ./devlog-5
+next: ./devlog-7
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-5)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 Well it's been almost a year since the last dev log.
 
@@ -113,7 +114,7 @@ I don't yet have any docs showcasing the features (or any docs at all) but you c
 
 I only stole Rust's syntax highlighting grammar because it's kinda what I want the language to look like. I won't be adding any Rust features though, feature wise the language will be close to C / Go with basic syntax simillar to what modern languages (like TypeScript / Kotlin / Swift / Rust) have.
 
-## 💡 Code-assist without language server
+## 💡 LSP but no LSP
 
 And I was `oh 🤙 so 🤙 hyped 🤙` to implement the starter code assist in a week.
 
@@ -163,9 +164,3 @@ I also made a small playground to test that the compiler will work in the browse
 You can try it 👉 [here](https://glebbash.deno.dev/lo-playground/) 👈
 
 ![playground](./assets/lo-playground.png)
-
-[Next Post](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-<!-- Links -->
-
-[link]: https://somewhere.com

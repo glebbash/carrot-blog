@@ -2,10 +2,11 @@
 title: "LO[2]: Time to stop writing tests"
 publish_date: 2022-02-05
 tags: [lo]
+prev: ./devlog-1
+next: ./devlog-3
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-0)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 In the previous DevLog I guess I explained what I am trying to and what I had
 done. Now let's see how I did that.
@@ -99,5 +100,3 @@ Hopefully next DevLog will tell about self-hosting compiler for `LO` and
 maybe I'll explain the name of the language 😏.
 
 `TODO: insert patented "see you in the next one" phrase`
-
-[Next Post](./devlog-3)

@@ -2,10 +2,11 @@
 title: "LO[3]: WASM, JIT and a new sub project?!"
 publish_date: 2022-07-20
 tags: [lo]
+prev: ./devlog-2
+next: ./devlog-4
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-2)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 A long time ago...
 
@@ -186,5 +187,3 @@ Too bad you can't like and subscribe, because the next part will be all about
 it, stay tuned.
 
 `TODO: insert patented "see you in the next one" phrase`
-
-[Next Post](./devlog-4)

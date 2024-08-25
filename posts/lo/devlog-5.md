@@ -2,10 +2,11 @@
 title: "LO[5]: Full rewrite, 3K lines file, no lib heaven"
 publish_date: 2023-06-20
 tags: [lo, rust]
+prev: ./devlog-4
+next: ./devlog-6
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-4)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 Nowadays it's really hard not to use ChatGPT for writing ...
 
@@ -331,8 +332,6 @@ If you are curios what this does you can ask ChatGPT to decypher it. It
 understands it easily.
 
 The end.
-
-[Next Post](./devlog-6)
 
 <!-- Links -->
 

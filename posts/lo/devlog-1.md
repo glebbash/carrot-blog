@@ -2,10 +2,11 @@
 title: "LO[1]: The purpose"
 publish_date: 2022-01-29
 tags: [lo]
+prev: ./devlog-0
+next: ./devlog-2
 ---
 
-[GitHub Repo](https://github.com/glebbash/LO) |
-[Previous Post](./devlog-0)
+[GitHub Repo](https://github.com/glebbash/LO)
 
 In the previous DevLog I wrote about switching to Scala from TypeScript because
 of performance issues. This time I though it would be better to start with
