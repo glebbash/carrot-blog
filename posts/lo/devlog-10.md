@@ -5,6 +5,10 @@ tags: [lo]
 prev: ./devlog-9
 ---
 
+<div style="text-align: center;">
+    <img class="yt-embed" src="./assets/10.png" style="width: 50%"/>
+</div>
+
 [GitHub Repo](https://github.com/glebbash/LO)
 
 Oh it is soooo hard designing a language. I was stuck for months trying to design error handling. So I made a formatter, transpiler and an interpreter instead. (more on that in next DevLog probably)
