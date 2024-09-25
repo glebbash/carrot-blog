@@ -30,7 +30,7 @@ async function main() {
     }
 
     const posts = await loadPosts();
-    const post = posts.find((p) => p.path === req.url);
+    const post = posts.find((p) => p.path === req.path);
     if (post === undefined) {
       return next();
     }
@@ -121,6 +121,21 @@ function renderPost({ data, pageContent }) {
       </header>
       <article class="page-content">
         ${pageContent}
+        <script src="https://giscus.app/client.js"
+          data-repo="glebbash/carrot-blog"
+          data-repo-id="R_kgDOHtC2Rg"
+          data-category="General"
+          data-category-id="DIC_kwDOHtC2Rs4Ciydu"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="dark"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
       </article>
     `,
   });
