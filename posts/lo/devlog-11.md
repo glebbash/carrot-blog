@@ -231,21 +231,19 @@ When starting implementing the formatter I though why not have a flag that would
 
 > Update: It actually might be that I started the whole V2 Pipeline thing because I wanted to experiment with C output
 
-My language is on the same level in semantics to C so it shouldn't be that hard right?
-
-Welp...
+My language is on the same level in semantics as C so it shouldn't be that hard right? Welp...
 
 First of all, having another target language for a formatter means double the code. No matter how you structure it, either with 2 compiler classes (struct + impl in Rust) or just having a bunch of conditions you do get into roughly double the code anyways because of language differences.
 
 Having double the code for feature that isn't essential is a big no. But I was still considering it as transpiling to C pretty much means you get the widest target coverage.
 
-C code isn't a final target though and you'll need to have a C compiler then to get all the way. This on the other hand goes the opposite way of keeping dependencies to a minimum. But I was still considering having it as a secondary target becasue of the possibilites.
+C code isn't a final target though and you'll need to have a C compiler to go all the way. This on the other hand goes the opposite way of keeping dependencies to a minimum. But I was still considering having it as a secondary target because of the possibilites.
 
 So I was making a transpiler to C (fucking always want to call it "C transpiler" but that's not correct) in parralel with the formatter but then I hit the roadblock.
 
 LO and C semantics are similarish but not similar enough to be produced from only AST information.
 
-What I though was that going from LO to C would be similar to TypeScript to JavaScript transpiler where you just remove the types (not true technically as TS to JS also involves desugaring and polyfilling).
+What I though was that going from LO to C would be similar to TypeScript to JavaScript transpiler where you just remove the types (not technically true, as TS to JS transpilation also involves desugaring and polyfilling).
 
 In my case I though I would just rearange syntax constructs turning:
 ```Rust
@@ -265,17 +263,17 @@ The complexity is comparable to building WASM IR/binaries, and would only makes 
 
 And after transpiler started to grow pretty big I decided to pull the plug and nuke it.
 
-But it doesn't mean that I it's now not possible to use C libraries though: I might look into [WASM Object Files Linking](https://github.com/WebAssembly/tool-conventions/blob/main/Linking.md) in the future.
+But it doesn't mean that I won't be possible to use/link with C libraries in LO. I might look into [WASM Object Files Linking](https://github.com/WebAssembly/tool-conventions/blob/main/Linking.md) in the future.
 
 ### Unbuffered output kills performance
 
-But the formatter was a big success though. After dropping C target my productivity sky rocketed and formatted was done in less then a month (on and off) and was finished before  codegen migration to AST.
+But the formatter was a big success though. After dropping C target my productivity sky rocketed and the formatter was done in less then a month (on and off) and was finished before codegen migration to AST.
 
-One discovery though was that printing each token with a call to `fd_write` (write to stdout) would have unusable performance in some cases.
+One discovery I made was that printing each token with a call to `fd_write` (write to stdout) would have unusable performance in some cases.
 
-Formatting a 20KLOC file (I embedded image data in the source code) took 6-10s when calling formatter through VSCode 💀.
+Formatting a 20KLOC file (I embedded image data in the source code) took 6-10s when calling formatter through VSCode 💀. And keeping my workflow with format on save and constant `Ctrl+S` maching made the editor unusable.
 
-Same file was formatted in under 150ms in wasmtime so I knew it wasn't my code being terrible. Turns out VSCode takes quite a lot of time on stdout write calls and I had to add output buffering to make the formatted usable.
+Same file was formatted in under 150ms in wasmtime so I knew it wasn't my code being terrible. Turns out VSCode takes quite a lot of time on stdout write calls and I had to add output buffering to make the formatter usable.
 
 It turned out to be quite simple and not intrusive at all:
 ![formatter buffering addition](./assets/formatter-buffering-addition.png)
@@ -307,7 +305,7 @@ So I went looking for the alternatives as interpreting LO could be big.
 
 It turns out I didn't need AST creation step at all to make the interpreter: I could just interpret the generated WASM "IR".
 
-Doing so will create a WASM interpreter compiled WASM.
+Doing so will create a WASM interpreter compiled to WASM.
 
 ![inception spin](./assets/inception-spin.gif)
 
@@ -315,15 +313,15 @@ So I rushed creating the WASM interpeter which took ~1.5KLOC and supports a subs
 
 But now having a WASM interpreter meant that I can not only interpret LO source code, but any program compiled to WASM.
 
-That is, if I write a WASM binary parser to produce WASM IR that the interpreter uses. Fortunately WASM "IR" and the WASM binary format are very very close so writing a WASM parser was super quick as well (< 1KLOC).
+That is, if I write a parser from WASM binary to my internal WASM IR first. Fortunately my WASM "IR" and the the WASM binary format are very very close so writing a WASM parser was super quick as well (< 1KLOC).
 
-I have module verification as a todo though so any malformed WASM modules would just make compiler panic.
+Module verification is not implemented though so any malformed WASM modules would just make compiler panic 🤷‍♂️.
 
 ### 🏎️ Interpreter Performance
 
 Unfortunately because of security constraints WASM spec does not allow making executable memory chunks so it's not possible to make a JIT compiler compiled to WASM.
 
-So the performance of any interpreter compiled to WASM no matter whether it's a Python interpreter or a JS interpreter is severely limited.
+So the performance of any interpreter compiled to WASM, no matter whether it's a Python interpreter or a JS interpreter, is severely limited.
 
 It doesn't matter much for hello-worlds and others, and I think that even having a full self hosted compiler's source interpreted won't take a huge amount of time.
 
@@ -333,15 +331,15 @@ Interpreting 6 AOC tasks from examples takes 2.5 seconds compared to 200ms it ta
 
 The interpreter isn't like formula one optimized, but I did look into performance to a reasonable extent including prebuilding jump tables for loops and conditionals thus lowering them to gotos, not doing unnecessary allocations etc.
 
-Just for funsies I found [toywasm](https://github.com/yamt/toywasm) which is another WASM in WASM interpreter to use as performance baseline. And mine is about 2-3x faster 😎
+Just for funsies I found [toywasm](https://github.com/yamt/toywasm) which can be built into a WASM in WASM interpreter and used it as performance baseline. And mine turned out to be about 2-3x faster 😎
 
 ![toywasm perf](./assets/toywasm-perf.png)
 
-### Interpeter Experiment Status: undecided
+### Interpeter Experiment Status: `undecided`
 
-Even though the interpreter works, I am not sure how it will be.
+Even though the interpreter works, I am not sure how useful it will be.
 
-It's possible to use WASM interpreter to get some small stuff done like constant folding or even try to go for full compile time code execution ala Zig.
+It's possible to use WASM interpreter to eval some small stuff like constant folding or even try to go for full compile time code execution ala Zig.
 
 It's also possible to combine interpreter with WASM parser and allow to interpret code compiled to WASM from other languages. It could be used for compiler plugins for example.
 
@@ -349,15 +347,15 @@ But currently WASM interpreter and WASM parser only support a subset of WASM fea
 
 Supporting full WASM 1.0 compliance makes no sense for now and I don't plan to look into compile time execution for near future.
 
-So the code is in a limbo state for now. And I am undecided whether I should keep or remove it.
+So the code is in a limbo state for now. And I am undecided whether I should keep it or remove it.
 
 ### 📈 Code size increase
 
 Using `npx kloc src` and some GitHub commit searching I found out that code amount increased from ~6KLOC to ~11KLOC in the past 5 months which makes me kinda 😭 as I want to make the compiler as small as possible.
 
-Introducing the AST creation step added ~2KLOC to match the same features. That's about what I was expecting when deciding not to do AST in before.
+Introducing the AST creation step added ~2KLOC to match the same features. That's about what I was expecting when deciding not to do AST before.
 
-And addition of formatter brough ~1KLOC but it is definetely a big plus for the compiler.
+Addition of the formatter brough ~1KLOC but it is definetely a big plus for the compiler.
 
 > Because AST interpreter didn't work out, AST creation is now only needed for codegen and formatter which makes formatter cost actually ~3KLOC 🫠
 
@@ -368,3 +366,5 @@ As for WASM parser/eval (~3KLOC) code, it's possibilities are pretty interesting
 The next step I guess is going self-hosted (which I am trying to do since creation) which involves getting LO to a comfortable feature level and port >10KLOC of Rust.
 
 It's gonna unlock a LOt of possibilities but will also take a LOt more time so I'll probably get bored again and find some other tangent soon.
+
+Until next time 👋
