@@ -3,6 +3,7 @@ title: "LO[10]: Design is HARD, Rust Lies, Starstruck"
 publish_date: 2024-08-25
 tags: [lo]
 prev: ./devlog-9
+next: ./devlog-11
 ---
 
 <div style="text-align: center;">
