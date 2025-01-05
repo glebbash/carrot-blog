@@ -153,7 +153,58 @@ Similar to pratt-parsing this technique deserves a separate post. But I ain't in
 So the idea goes like this:
 - you define all places where comments are expected to be after the formatting: for example it makes to sence to have a comment in between tokens of `let x = 1` but comments between expressions and functions are expected
 - you store begin/end locations of those places in your AST, so for example each statement gets a begin/end position in the struct. I did is with a single `loc: LoLocation` field where `LoLocation` stored both begin and end positions
-- you store comments in a separate array 
+- you store comments in a separate array recording a begin/end positions for comment nodes as well
+- when formatting the code, just keep track of total number of comments printed and insert a bunch of `print_comments_before_pos` calls that would print comments between the 
+
+It's so simple yet so effective. Here is some of the code copied from an actual formatter showing the comment printing logic:
+
+```Rust
+fn print_file(&mut self) {
+    for (expr, i) in self.ast.clone().exprs.iter().zip(0..) {
+        self.print_comments_before_pos(expr.loc().pos.offset);
+        self.print_top_level_expr(expr, i);
+    }
+
+    // print the rest of the comments
+    self.print_comments_before_pos(usize::MAX);
+}
+
+fn print_code_block_expr(&mut self, code_block: &CodeBlockExpr) {
+    stdout_writeln("{");
+
+    self.indent += 1;
+
+    for expr in &code_block.exprs {
+        self.print_comments_before_pos(expr.loc().pos.offset);
+        self.print_indent();
+        self.print_code_expr(expr);
+        stdout_writeln(";");
+    }
+
+    // print the rest of the comments
+    self.print_comments_before_pos(code_block.loc.end_pos.offset);
+
+    self.indent -= 1;
+
+    self.print_indent();
+    stdout_write("}");
+}
+
+fn print_comments_before_pos(&mut self, offset: usize) {
+    while self.comments_printed < self.ast.comments.len() {
+        let comment = &self.ast.comments[self.comments_printed];
+        if comment.loc.end_pos.offset > offset {
+            break;
+        }
+
+        self.print_indent();
+        stdout_writeln(&comment.content);
+        self.comments_printed += 1;
+    }
+}
+```
+
+I don't see any major problems with this approach and I would definitely use it again if I ever write a code formatter again.
 
 ### Formatter is Just a Code Transformer
 
