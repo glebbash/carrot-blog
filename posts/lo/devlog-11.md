@@ -1,5 +1,5 @@
 ---
-title: "LO[11]: V2 Pipeline, Strict Formatter, WASM in WASM Interprepter"
+title: "LO[11]: V2 Pipeline, Strict Formatter, WASM in WASM Interpreter"
 publish_date: 2025-01-04
 tags: [lo]
 prev: ./devlog-10
@@ -28,12 +28,12 @@ Normally the compiler pipeline looks something like this:
 - `optimizer` - optimizes the IR
 - `codegen` - compiles the IR for the target architecture
 
-Because I was trying to make compiler small, originally I made a decision to simplify the pipeline to this:
+Because I was trying to make the compiler small, originally I made a decision to simplify the pipeline to this:
 - `lexer` - splits source code into tokens
 - `parser/ir-builder` - parses tokens, keeping AST parts as function locals and builds WASM "IR"
 - `codegen (WasmModule::dump)` - dumps the WASM "IR" using WASM binary format
 
-The reasoning was that making AST isn't really needed to build WASM module and I would save a lot of lines by not defining all the AST nodes (~500LOC just for the types). 
+The reasoning was that making an AST isn't really needed to build WASM module and I would save a lot of lines by not defining all the AST nodes (~500LOC just for the types). 
 
 This approach worked fine but it was limited in a way that there was only one global transformation possible: `you go from source code to WASM binary` (and also writing inspection info to stderr in `--inspect` mode).
 
@@ -71,7 +71,7 @@ It was a very long and boring process just migrating the compiler so to spice it
 
 ## 💅 Strict Formatter
 
-I think that questions like:
+I think that the questions like:
 - > semicolon or no semicolon?
 - > spaces or tabs?
 - > 2 spaces or 4 spaces?
@@ -87,7 +87,7 @@ JavaScript/TypeScript is an example of the worst case scenario: all of these que
 
 #### Semicolons
 
-For some reason semicolons are optional. It's not like there are no semicolons at all (somewhat like in Python) and it's not like they are required. Everyone now has to decide for themselves whether to use them or not.
+For some reason, semicolons are optional. It's not like there are no semicolons at all (somewhat like in Python) and it's not like they are required. Everyone now has to decide for themselves whether to use them or not.
 
 #### Naming conventions
 
@@ -128,7 +128,7 @@ Correct nesting is pretty simple: you do your recursive traversal and pass the i
 
 Splitting code to hit 80 char column limit is apparently a [super duper hard problem](https://journal.stuffwithstuff.com/2015/09/08/the-hardest-program-ive-ever-written/) so I did the same thing as `gofmt` does: you just put all on the same line, if developers think it's too much they can make temp variables to split into multiple lines.
 
-I though about some simple half-way solutions like putting function parameters (and arguments) on new lines if their count exceeds 3 but then I didn't really bother implementing that. 
+I thought about some simple half-way solutions like putting function parameters (and arguments) on new lines if their count exceeds 3 but then I didn't really bother implementing that. 
 
 But handling comments on the other is a must for any formatter:
 
@@ -244,11 +244,11 @@ The statuses in order are: `success`, `failure`, `undecided`
 
 Let'sa check how interpreter experiment went:
 
-## ♻️ WASM in WASM Interprepter
+## ♻️ WASM in WASM Interpreter
 
 This one actually turned out kinda interesting.
 
-The initial experiment involved interpretting the now produced AST. Which, ehhm, didn't go as planned.
+The initial experiment involved interpreting the now produced AST. Which, ehhm, didn't go as planned.
 
 The problem was that I would have to re-implement all the scoping and type building logic from the codegen and there wasn't any easy ways to just reuse the code because it relied on contexts etc.
 
@@ -256,7 +256,7 @@ So I went looking for the alternatives as interpreting LO could be big.
 
 It turns out I didn't need AST creation step at all to make the interpreter: I could just interpret the generated WASM "IR".
 
-Doing so will create WASM interpreter compiled WASM.
+Doing so will create a WASM interpreter compiled WASM.
 
 ![inception spin](./assets/inception-spin.gif)
 
@@ -280,7 +280,7 @@ But for even slightly heavier tasks like some brute-forcing solutions for AOC (A
 
 Interpreting 6 AOC tasks from examples takes 2.5 seconds compared to 200ms it takes Node.js to run (including module loading) the same WASM code.
 
-The interpreter isn't like formula one optimized, but I did look into performance to reasonable extents including prebuilding jump tables for loops and conditionals thus lowering them to gotos, not doing unnecessary allocations etc.
+The interpreter isn't like formula one optimized, but I did look into performance to a reasonable extent including prebuilding jump tables for loops and conditionals thus lowering them to gotos, not doing unnecessary allocations etc.
 
 Just for funsies I found [toywasm](https://github.com/yamt/toywasm) which is another WASM in WASM interpreter to use as performance baseline. And mine is about 2-3x faster 😎
 
@@ -310,10 +310,10 @@ And addition of formatter brough ~1KLOC but it is definetely a big plus for the 
 
 > Because AST interpreter didn't work out, AST creation is now only needed for codegen and formatter which makes formatter cost actually ~3KLOC 🫠
 
-As for WASM parser/eval (~3KLOC) code, it's possibilities are pretty interesting but no language features depend on it yet and it's nicely separeted so it can be easily removed if it won't bring value.
+As for WASM parser/eval (~3KLOC) code, it's possibilities are pretty interesting but no language features depend on it yet and it's nicely separated so it can be easily removed if it won't bring value.
 
 ---
 
-The next step I guess is going self-hosted (which I am trying to do since creation) which involves getting LO to a confortable feature level and port >10KLOC of Rust.
+The next step I guess is going self-hosted (which I am trying to do since creation) which involves getting LO to a comfortable feature level and port >10KLOC of Rust.
 
 It's gonna unlock a LOt of possibilities but will also take a LOt more time so I'll probably get bored again and find some other tangent soon.
